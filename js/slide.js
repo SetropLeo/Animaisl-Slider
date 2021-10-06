@@ -93,7 +93,7 @@ export class Slide {
 
   changeSlide(index) {
     const activeSlide = this.slideArray[index];
-    this.moveSlide(this.slideArray[index].position);
+    this.moveSlide(activeSlide.position);
     this.slidesIndexNav(index);
     this.dist.finalPosition = activeSlide.position;
     this.changeActiveClass();
@@ -171,7 +171,7 @@ export default class SlideNav extends Slide {
     control.dataset.control = 'slide';
 
     this.slideArray.forEach((item, index) => {
-      control.innerHTML += `<li><a href="#slide${index + 1}>${
+      control.innerHTML += `<li><a href="#slide${index + 1}"">${
         index + 1
       }</a></li>`;
     });
